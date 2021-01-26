@@ -11,4 +11,4 @@ class GoodSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ["description", "phone_number"]
+        fields = ["description", "phone_number", "user"]
