@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("order/add/", views.OrderCreate.as_view()),
     path("order/all/", views.OrderList.as_view()),
+    path("order/<pk>/update/", views.OrderUpdate.as_view()),
 ]
 
 urlpatterns += router.urls
