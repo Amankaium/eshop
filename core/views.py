@@ -23,3 +23,9 @@ class OrderList(ListAPIView):
 class OrderRetrieve(RetrieveAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+
+
+class OrderUpdate(UpdateAPIView):
+    serializer_class = OrderSerializer
+    queryset = Order.objects.all()
+
