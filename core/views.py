@@ -1,5 +1,6 @@
 from rest_framework import viewsets
-from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView
+from rest_framework.generics import CreateAPIView, \
+    ListAPIView, UpdateAPIView, DestroyAPIView, RetrieveAPIView
 from .serializers import *
 from .models import Good
 
@@ -18,6 +19,13 @@ class OrderList(ListAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
 
+
+class OrderRetrieve(RetrieveAPIView):
+    serializer_class = OrderSerializer
+    queryset = Order.objects.all()
+
+
 class OrderUpdate(UpdateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+
