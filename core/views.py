@@ -21,11 +21,10 @@ class OrderList(ListAPIView):
 
 
 class OrderRetrieve(RetrieveAPIView):
-    serializer_class = OrderSerializer
+    serializer_class = OrderDetailSerializer
     queryset = Order.objects.all()
 
 
 class OrderUpdate(UpdateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
-
