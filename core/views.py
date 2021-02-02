@@ -29,3 +29,7 @@ class OrderUpdate(UpdateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
 
+class OrderDelete(DestroyAPIView):
+    serializer_class =OrderSerializer
+    queryset = Order.objects.all()    
+
