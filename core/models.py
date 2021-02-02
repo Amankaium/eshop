@@ -26,3 +26,5 @@ class Order(models.Model):
     description = models.TextField()
     phone_number = models.CharField(max_length=50)
     
+# class All( Order, Good):
+#     pass
