@@ -13,6 +13,10 @@ urlpatterns = [
     path("order/<pk>/", views.OrderDetail.as_view()),
     path("order/<pk>/update/", views.OrderUpdate.as_view()), 
     path("order/<pk>/destroy/", views.OrderDestroy.as_view()),
+    path("auth/", include('djoser.urls')),
+    path("auth/", include('djoser.urls.authtoken')),
+    path("auth/", include('djoser.urls.jwt')),
 ]
 
 urlpatterns += router.urls
+

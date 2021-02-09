@@ -41,7 +41,15 @@ INSTALLED_APPS = [
     'core',
     'rest_framework',
     'djoser',
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTIFICATION_CLASSES':(
+        'rest_framework.authenticitaion.TokenAuthentication',
+        'rest_framework_simplejwt.authenticitaion.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
