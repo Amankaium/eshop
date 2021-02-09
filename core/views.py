@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from rest_framework.generics import CreateAPIView, ListAPIView, \
      UpdateAPIView, DestroyAPIView
 from .serializers import *
@@ -18,6 +18,11 @@ class OrderCreate(CreateAPIView):
 class OrderList(ListAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
+
+class OrderDetail(ListAPIView):
+    serializer_class = OrderDetailSerializer
+    queryset = Order.objects.all()
 
 class OrderUpdate(UpdateAPIView):
     serializer_class = OrderSerializer
@@ -28,6 +33,3 @@ class OrderDestroy(DestroyAPIView):
     queryset = Order.objects.all
 
 
-# class All(ListAPIView):
-#     serializer_class = AllSerializer
-#     queryset = Order.objects.all()

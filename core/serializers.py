@@ -11,12 +11,10 @@ class GoodSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ["description", "phone_number", "user"]
+        fields = ["description", "phone_number", ]
 
-# class AllSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = All
-#         fields = [
-#         "name", "price", "qty",
-#         "description", "phone_number", "user"
-#         ]
+class OrderDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
+

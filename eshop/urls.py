@@ -8,11 +8,11 @@ router.register(r'good', views.GoodViewSet, basename="goods")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("order/add/", views.OrderCreate.as_view()),
     path("order/all/", views.OrderList.as_view()),
-    path("order/<pk>/update/", views.OrderUpdate.as_view()),
+    path("order/add/", views.OrderCreate.as_view()),
+    path("order/<pk>/", views.OrderDetail.as_view()),
+    path("order/<pk>/update/", views.OrderUpdate.as_view()), 
     path("order/<pk>/destroy/", views.OrderDestroy.as_view()),
-#     path("order/all_atributs/", views.All.as_view()),
 ]
 
 urlpatterns += router.urls
