@@ -24,6 +24,7 @@ class OrderList(ListAPIView):
 class OrderRetrieve(RetrieveAPIView):
     serializer_class = OrderDetailSerializer
     queryset = Order.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class OrderUpdate(UpdateAPIView):
