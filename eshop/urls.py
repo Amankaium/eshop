@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("order/add/", views.OrderCreate.as_view()),
     path("order/all/", views.OrderList.as_view()),
-    path("order/<pk>/", views.OrderRetrieve.as_view()),
+    path("order/<pk>/", views.OrderRetrieve.as_view(), name="order"),
     path("order/<pk>/update/", views.OrderUpdate.as_view()),
     path("order/<pk>/delete/", views.OrderDelete.as_view()),
     path("auth/", include('djoser.urls')),
