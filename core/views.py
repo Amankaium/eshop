@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from rest_framework.generics import CreateAPIView, \
     ListAPIView, UpdateAPIView, DestroyAPIView, RetrieveAPIView
 from .serializers import *
@@ -14,15 +14,24 @@ class OrderCreate(CreateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
 
+    def post(self, request, *args, **kwargs):
+        print("Job done!")
+        print("Job done!")
+        print("Job done!")
+        return super().post(request, *args, **kwargs)
+
+
 
 class OrderList(ListAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class OrderRetrieve(RetrieveAPIView):
     serializer_class = OrderDetailSerializer
     queryset = Order.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class OrderUpdate(UpdateAPIView):
