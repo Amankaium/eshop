@@ -14,6 +14,13 @@ class OrderCreate(CreateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
 
+    def post(self, request, *args, **kwargs):
+        print("Job done!")
+        print("Job done!")
+        print("Job done!")
+        return super().post(request, *args, **kwargs)
+
+
 
 class OrderList(ListAPIView):
     serializer_class = OrderSerializer
