@@ -1,4 +1,7 @@
+from django.shortcuts import render
 from rest_framework import viewsets, permissions
+from rest_framework.response import Response
+from rest_framework.views import View
 from rest_framework.generics import CreateAPIView, \
     ListAPIView, UpdateAPIView, DestroyAPIView, RetrieveAPIView
 from .serializers import *
@@ -40,6 +43,10 @@ class OrderUpdate(UpdateAPIView):
     
 
 class OrderDelete(DestroyAPIView):
-    serializer_class =OrderSerializer
+    serializer_class = OrderSerializer
     queryset = Order.objects.all()    
 
+
+class CategoryListView(ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
