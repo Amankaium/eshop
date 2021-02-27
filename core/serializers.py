@@ -24,3 +24,9 @@ class OrderDetailSerializer(serializers.ModelSerializer):
             "description",
             "phone_number"
         ]
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ["name"]
